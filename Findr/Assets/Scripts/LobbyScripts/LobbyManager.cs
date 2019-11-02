@@ -11,6 +11,8 @@ public class LobbyManager : MonoBehaviour
     public List<GameObject> LobbyObjects = new List<GameObject>();
 
     public Sprite fixedStool;
+    public GameObject SignInBtn;
+    public Sprite clientClipboard;
 
     public Image LobbyBG;
 
@@ -22,7 +24,6 @@ public class LobbyManager : MonoBehaviour
         //Does what it says it does (hopefully)
         SetupLobby();
     }
-
 
     private void SetupLobby()
     {
@@ -72,6 +73,7 @@ public class LobbyManager : MonoBehaviour
 
                 //Put up SignIn Clipboard
                 LobbyObjects[3].SetActive(true);
+                SignInBtn.GetComponent<Image>().sprite = clientClipboard;
 
                 LobbyObjects[6].SetActive(true);
 
@@ -89,12 +91,12 @@ public class LobbyManager : MonoBehaviour
                 LobbyObjects[6].GetComponent<Image>().sprite = fixedStool;
 
                 break;
+
             case 7:
                 LobbyObjects[7].SetActive(false);
                 LobbyObjects[3].SetActive(true);
-                LobbyBG.sprite = Backgrounds[3];
-                if(LobbyObjects[6].GetComponent<Image>().sprite != fixedStool)
-                    LobbyObjects[6].GetComponent<Image>().sprite = fixedStool;
+                LobbyBG.sprite = Backgrounds[3];                
+                LobbyObjects[6].GetComponent<Image>().sprite = fixedStool;
                 LobbyObjects[6].SetActive(true);
 
                 //Add Desk
@@ -171,7 +173,7 @@ public class LobbyManager : MonoBehaviour
 
     public void UpgradeLobby()
     {
-        Debug.Log("Touched!");
+       
         int currentLevel = GameManager.main.lobbyLevel;
         int currentMoney = GameManager.main.money;
         int requiredMoney;
@@ -200,7 +202,7 @@ public class LobbyManager : MonoBehaviour
                 break;
 
             case 6:
-                requiredMoney = 0;
+                requiredMoney = 0;                
                 break;
 
             case 7:
@@ -225,12 +227,10 @@ public class LobbyManager : MonoBehaviour
 
         }
 
-        //Quick Level check
-        Debug.Log("Before upgrade level: " + currentLevel);
-
         //Money check
         if(currentMoney >= requiredMoney)
         {
+            GameManager.main.money -= requiredMoney;
             //If Lobby Level is less than 10 add 1 to the lobby level and then set up the lobby with the new furniture.
             if(currentLevel < 10)
             {
