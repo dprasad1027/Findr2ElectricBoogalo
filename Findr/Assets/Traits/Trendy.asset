@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Trendy
   m_EditorClassIdentifier: 
   name: Trendy
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: f7d8cf6bd83c27e43bcefe166cf08d3e, type: 3}

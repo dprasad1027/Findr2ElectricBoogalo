@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Rich
   m_EditorClassIdentifier: 
   name: Rich
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: dcd9921278191ec4ca13f1fc63a3b6f6, type: 3}

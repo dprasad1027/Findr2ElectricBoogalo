@@ -15,4 +15,7 @@ MonoBehaviour:
   name: Mark the Shark
   bio: What's up! I'm Mark the Shark. FWB, anyone?
   sharkSprite: {fileID: 21300000, guid: 4cd8690cfb00a3147a04b0c748bb1019, type: 3}
-  desiredTraits: []
+  desiredTraits:
+  - {fileID: 11400000, guid: 37159c2edca36624a81be3bc80bb6887, type: 2}
+  - {fileID: 11400000, guid: e31842ba38be2e34e8a10f4ddf9f2b63, type: 2}
+  - {fileID: 11400000, guid: 985dd8755b252604ba097aba00166a9a, type: 2}

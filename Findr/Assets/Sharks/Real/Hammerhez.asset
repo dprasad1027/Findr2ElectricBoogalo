@@ -15,4 +15,6 @@ MonoBehaviour:
   name: Hammerhez
   bio: Why would I play finder?
   sharkSprite: {fileID: 21300000, guid: f9afe0944f021344ba2e40d2d9558002, type: 3}
-  desiredTraits: []
+  desiredTraits:
+  - {fileID: 11400000, guid: 8356c48264aa06049a271c26f29900d0, type: 2}
+  - {fileID: 11400000, guid: fad9d356e277f254dbb233e5e006e13b, type: 2}

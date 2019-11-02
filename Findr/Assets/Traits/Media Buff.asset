@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Media Buff
   m_EditorClassIdentifier: 
   name: Media Buff
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 8debb3fbba3dfc64aa2f6dfa4b791471, type: 3}

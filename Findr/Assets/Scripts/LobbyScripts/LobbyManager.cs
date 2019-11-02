@@ -26,6 +26,8 @@ public class LobbyManager : MonoBehaviour
     public Image infoImage;
     public Text infoName;
     public Text infoBio;
+    public GameObject infoTraitPanel;
+    public GameObject traitImage;
 
     
     
@@ -258,15 +260,31 @@ public class LobbyManager : MonoBehaviour
 
     public void OpenClientInfo()
     {
+        
         if (infoPanel.activeSelf)
         {
+
+            Debug.Log("Child Count: " + infoTraitPanel.transform.childCount);
+            for(int i = 0; i < infoTraitPanel.transform.childCount; i++)
+            {
+                Destroy(infoTraitPanel.transform.GetChild(i).gameObject);
+            }
+    
             infoPanel.SetActive(false);
         }
         else
         {
+            
             infoImage.sprite = sharkInfo.sharkSprite;
             infoName.text = sharkInfo.name;
-            infoBio.text = sharkInfo.bio; 
+            infoBio.text = sharkInfo.bio;
+            GameObject tempTraitImage;
+            for(int i = 0; i < sharkInfo.desiredTraits.Count; i++)
+            {
+                tempTraitImage = Instantiate(traitImage, infoTraitPanel.transform);
+                tempTraitImage.GetComponent<Image>().sprite = sharkInfo.desiredTraits[i].traitSprite;
+                
+            }
             infoPanel.SetActive(true);
         }
     }

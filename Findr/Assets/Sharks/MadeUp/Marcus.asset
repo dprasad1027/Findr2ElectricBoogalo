@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Marcus
   m_EditorClassIdentifier: 
   name: Marcus
-  bio: 
+  bio: Chad stole my girlfriend so now I'm here.
   sharkSprite: {fileID: 21300000, guid: 7fd6cf7973de75742bd8597c49d85cf1, type: 3}
-  desiredTraits: []
+  desiredTraits:
+  - {fileID: 11400000, guid: fad9d356e277f254dbb233e5e006e13b, type: 2}
+  - {fileID: 11400000, guid: 76487396e8a37174fa7d51de64863661, type: 2}
+  - {fileID: 11400000, guid: 985dd8755b252604ba097aba00166a9a, type: 2}

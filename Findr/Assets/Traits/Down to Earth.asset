@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Down to Earth
   m_EditorClassIdentifier: 
   name: Down to Earth
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 5ef2fa06112e02f438436737c6ed4cd1, type: 3}

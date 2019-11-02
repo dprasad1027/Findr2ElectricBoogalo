@@ -15,4 +15,7 @@ MonoBehaviour:
   name: Rayn
   bio: I may be into some weird stuff, so timid sharks stay away!
   sharkSprite: {fileID: 21300000, guid: 28bdbeaa194cfa3499b3b73155c822d2, type: 3}
-  desiredTraits: []
+  desiredTraits:
+  - {fileID: 11400000, guid: fad9d356e277f254dbb233e5e006e13b, type: 2}
+  - {fileID: 11400000, guid: 76487396e8a37174fa7d51de64863661, type: 2}
+  - {fileID: 11400000, guid: 37159c2edca36624a81be3bc80bb6887, type: 2}

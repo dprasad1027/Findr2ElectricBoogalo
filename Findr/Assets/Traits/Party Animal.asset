@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Party Animal
   m_EditorClassIdentifier: 
   name: Party Animal
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 098fecf7ed3ef9d4ba9e5b9f28e37a6a, type: 3}

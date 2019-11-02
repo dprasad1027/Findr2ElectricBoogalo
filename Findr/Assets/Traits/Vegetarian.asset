@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Vegetarian
   m_EditorClassIdentifier: 
   name: Vegetarian
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 5c6e544c4d687b7498ad35b19697c83d, type: 3}

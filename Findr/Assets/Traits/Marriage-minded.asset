@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Marriage-minded
   m_EditorClassIdentifier: 
   name: Marriage-minded
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: e0b05462047a8bd42acf6247bf51c3b7, type: 3}

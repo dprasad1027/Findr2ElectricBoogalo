@@ -2550,7 +2550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 165.31982, y: -822}
+  m_AnchoredPosition: {x: 165.32031, y: -822}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1449684928
@@ -3088,7 +3088,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 125, y: 125}
+  m_CellSize: {x: 150, y: 150}
   m_Spacing: {x: 10, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -4032,5 +4032,16 @@ PrefabInstance:
       propertyPath: infoBio
       value: 
       objectReference: {fileID: 545083219}
+    - target: {fileID: 1769256727975784920, guid: 5f9d2ce1d3aa46449b20ebc32e30379f,
+        type: 3}
+      propertyPath: infoTraitPanel
+      value: 
+      objectReference: {fileID: 1800067645}
+    - target: {fileID: 1769256727975784920, guid: 5f9d2ce1d3aa46449b20ebc32e30379f,
+        type: 3}
+      propertyPath: traitImage
+      value: 
+      objectReference: {fileID: 7200479816150999061, guid: 6a8c38f807b1ef043952a5a7b74fa9ad,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f9d2ce1d3aa46449b20ebc32e30379f, type: 3}
