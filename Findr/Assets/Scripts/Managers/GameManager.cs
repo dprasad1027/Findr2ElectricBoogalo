@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    #region Static Members
 
     public static GameManager main;
+
+    #endregion
+
+    #region RuntimeMembers
 
     public int lobbyLevel = 1;
     public int money;
@@ -15,6 +20,9 @@ public class GameManager : MonoBehaviour
 
     public Shark selectedClient;
 
+    #endregion
+
+    #region MonoBehavior
 
     private void Awake()
     {
@@ -25,8 +33,6 @@ public class GameManager : MonoBehaviour
         }
         main = this;
         DontDestroyOnLoad(this);
-
-
 
     }
 
@@ -42,7 +48,17 @@ public class GameManager : MonoBehaviour
         
     }
 
+    #endregion
 
-    
+    #region Public Methods
 
+
+
+    #endregion
+
+    #region Private Methods
+
+
+
+    #endregion
 }

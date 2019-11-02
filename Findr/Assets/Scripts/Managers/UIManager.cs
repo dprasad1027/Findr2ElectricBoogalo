@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -23,8 +24,8 @@ public class UIManager : MonoBehaviour
 
     public AudioClip Confirm;
     public int CurrentScreen;
-    public string PreviousScreenName = "Lobby";
-    public GameObject CurrentLevel;
+    public string PreviousScreenName = "None";
+    //public GameObject CurrentLevel;
 
     #endregion
 
@@ -64,10 +65,7 @@ public class UIManager : MonoBehaviour
         {
             if (Screens[i].name.Equals(name))
             {
-                if (Screens[CurrentScreen].name != CurrentLevel.name)
-                {
-                    Screens[CurrentScreen].screen.SetActive(false);
-                }
+                Screens[CurrentScreen].screen.SetActive(false);
                 Screens[i].screen.SetActive(true);
                 CurrentScreen = i;
             }
@@ -81,9 +79,30 @@ public class UIManager : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0;
-        GameManager.main.IsPaused = true;
-        ShowScreen("Pause");
+        if (!GameManager.main.IsPaused)
+        {
+            Time.timeScale = 0;
+            GameManager.main.IsPaused = true;
+            PreviousScreenName = Screens[CurrentScreen].name;
+            ShowScreen("Pause");
+        }
+        else
+        {
+            Time.timeScale = 1;
+            GameManager.main.IsPaused = false;
+            ShowScreen(PreviousScreenName);
+        }
+        
+    }
+
+    public void BackToLobby()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 
     #endregion
