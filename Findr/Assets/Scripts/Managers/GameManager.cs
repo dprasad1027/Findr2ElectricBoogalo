@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager main;
 
+    public int lobbyLevel = 5;
+    public int money;
 
 
 
