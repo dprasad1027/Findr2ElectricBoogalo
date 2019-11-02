@@ -8,7 +8,7 @@ public class PopulateGrid : MonoBehaviour
     public GameObject clientBtn;
     public int numberToCreate;
     public List<Shark> sharks = new List<Shark>();
-    public List<Shark> usedSharks = new List<Shark>();
+    public List<Shark> usedSharks = new List<Shark>(1);
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class PopulateGrid : MonoBehaviour
         {
             GetRandomShark();
         }
+        usedSharks.Remove(null);
         Populate();
     }
 
@@ -28,12 +29,13 @@ public class PopulateGrid : MonoBehaviour
 
     private void Populate()
     {
-        GameObject newObj;
+        GameObject newShark;
 
         for(int i = 0; i < numberToCreate; i++)
         {
-            newObj = Instantiate(clientBtn, transform);
-            newObj.GetComponent<Image>().sprite = usedSharks[i].sharkSprite;
+            newShark = Instantiate(clientBtn, transform);
+            newShark.GetComponent<Image>().sprite = usedSharks[i].sharkSprite;
+            newShark.GetComponent<ClientInfo>().clientRef = usedSharks[i];
             
         }
     }
@@ -45,6 +47,10 @@ public class PopulateGrid : MonoBehaviour
         
         Debug.Log("UsedSharks Capacity: " + usedSharks.Capacity);             
         Shark randomShark = sharks[Random.Range(0, sharks.Count)];
+        while (usedSharks.Contains(randomShark))
+        {
+            randomShark = sharks[Random.Range(0, sharks.Count)];
+        }
         usedSharks.Add(randomShark);
 
     }

@@ -18,6 +18,15 @@ public class LobbyManager : MonoBehaviour
 
     public Text LobbyText;
     public Text MoneyText;
+    public GameObject clientSelectionPanel;
+    public GameObject upgradeBtn;
+
+    public Shark sharkInfo;
+    public GameObject infoPanel;
+    public Image infoImage;
+    public Text infoName;
+    public Text infoBio;
+    
 
     private void Awake()
     {
@@ -232,6 +241,41 @@ public class LobbyManager : MonoBehaviour
     }
 
     public void OpenClientSelection()
+    {
+        if (clientSelectionPanel.activeSelf)
+        {
+            upgradeBtn.GetComponent<Button>().interactable = true;
+            clientSelectionPanel.SetActive(false);
+        }
+        else
+        {
+            upgradeBtn.GetComponent<Button>().interactable = false;
+            clientSelectionPanel.SetActive(true);
+        }
+    }
+
+    public void OpenClientInfo()
+    {
+        if (infoPanel.activeSelf)
+        {
+            infoPanel.SetActive(false);
+        }
+        else
+        {
+
+            
+
+
+            infoPanel.SetActive(true);
+
+
+
+
+
+        }
+    }
+
+    public void SelectedClient()
     {
 
     }
