@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d64e64a52001ca4caedee955f2ca24a, type: 3}
   m_Name: Sherry
   m_EditorClassIdentifier: 
-  name: 
-  bio: 
+  name: Sherry
+  bio: Howdy! My name is Sherry! If you hang out with me for too long I'll brainwash
+    you into believing in yourself and knowing you can achieve anything.
+  sharkSprite: {fileID: 21300000, guid: e10ae1638dcb7d644946f102a9bc0d65, type: 3}
   desiredTraits: []

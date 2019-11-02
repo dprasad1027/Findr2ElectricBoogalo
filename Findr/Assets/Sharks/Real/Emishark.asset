@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Emishark
   bio: Fish are friends, not food.
+  sharkSprite: {fileID: 21300000, guid: ab0bc4afd6203fd4db88d45b2bdd6a13, type: 3}
   desiredTraits: []

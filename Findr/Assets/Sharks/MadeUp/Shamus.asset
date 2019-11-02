@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d64e64a52001ca4caedee955f2ca24a, type: 3}
   m_Name: Shamus
   m_EditorClassIdentifier: 
-  name: 
-  bio: 
+  name: Shamus
+  bio: Hi there! Message me if we match
+  sharkSprite: {fileID: 21300000, guid: 074d44295b7af6d4b84e839182ed957d, type: 3}
   desiredTraits: []

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Mark the Shark
   bio: What's up! I'm Mark the Shark. FWB, anyone?
+  sharkSprite: {fileID: 21300000, guid: 4cd8690cfb00a3147a04b0c748bb1019, type: 3}
   desiredTraits: []

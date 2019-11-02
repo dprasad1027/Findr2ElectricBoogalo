@@ -155,21 +155,7 @@ public class LobbyManager : MonoBehaviour
         
         }
     }
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+     
 
     public void UpgradeLobby()
     {
@@ -244,4 +230,10 @@ public class LobbyManager : MonoBehaviour
             }
         }
     }
+
+    public void OpenClientSelection()
+    {
+
+    }
+
 }
