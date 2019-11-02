@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public int lobbyLevel = 1;
     public int money;
 
-
+    public Shark selectedClient;
 
 
     private void Awake()

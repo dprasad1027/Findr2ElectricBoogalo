@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviour
 {
-
+    
     public List<Sprite> Backgrounds = new List<Sprite>();
     public List<GameObject> LobbyObjects = new List<GameObject>();
 
@@ -26,6 +26,8 @@ public class LobbyManager : MonoBehaviour
     public Image infoImage;
     public Text infoName;
     public Text infoBio;
+
+    
     
 
     private void Awake()
@@ -262,22 +264,19 @@ public class LobbyManager : MonoBehaviour
         }
         else
         {
-
-            
-
-
+            infoImage.sprite = sharkInfo.sharkSprite;
+            infoName.text = sharkInfo.name;
+            infoBio.text = sharkInfo.bio; 
             infoPanel.SetActive(true);
-
-
-
-
-
         }
     }
 
     public void SelectedClient()
     {
-
+        if (infoPanel.activeSelf)
+        {
+            GameManager.main.selectedClient = sharkInfo;
+        }
     }
 
 }
