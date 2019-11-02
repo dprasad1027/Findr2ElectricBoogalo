@@ -6,22 +6,18 @@ using UnityEngine.UI;
 public class ClientInfo : MonoBehaviour
 {
     public Shark clientRef;
-    public LobbyManager lobbyManager;
-    
+    private LobbyManager lobbyManager;
+
+
+    private void Start()
+    {
+        lobbyManager = GameObject.FindGameObjectWithTag("LobbyManager").GetComponent<LobbyManager>();
+    }
+
     public void PopulateSharkInfo()
     {
         lobbyManager.sharkInfo = clientRef;
-    }
-
-    public void PlayClient()
-    {
-
-    }
-
-    public void Back()
-    {
-
-    }
-
+        lobbyManager.OpenClientInfo();
+    }     
 
 }
