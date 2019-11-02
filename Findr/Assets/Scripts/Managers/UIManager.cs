@@ -82,8 +82,7 @@ public class UIManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
-        //GameManager.main.IsPaused = true;
-
+        GameManager.main.IsPaused = true;
         ShowScreen("Pause");
     }
 

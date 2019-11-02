@@ -51,4 +51,20 @@ public class AudioManager : MonoBehaviour
     }
 
     #endregion
+
+    #region Public Methods
+
+    public void PlaySingle(AudioClip clip)
+    {
+        FxSource.clip = clip;
+        FxSource.PlayOneShot(clip, 0.2f);
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        MusicSource.clip = clip;
+        MusicSource.Play();
+    }
+
+    #endregion
 }
