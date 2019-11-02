@@ -13,12 +13,10 @@ public class PopulateGrid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (usedSharks.Count > 0)
+        for (int i = 0; i < numberToCreate; i++)
         {
-         usedSharks.Clear();
+            GetRandomShark();
         }
-        GetRandomShark();
-
         Populate();
     }
 
@@ -35,7 +33,7 @@ public class PopulateGrid : MonoBehaviour
         for(int i = 0; i < numberToCreate; i++)
         {
             newObj = Instantiate(clientBtn, transform);
-            newObj.GetComponent<Image>().color = Random.ColorHSV();
+            newObj.GetComponent<Image>().sprite = usedSharks[i].sharkSprite;
             
         }
     }
@@ -43,23 +41,11 @@ public class PopulateGrid : MonoBehaviour
 
     private void GetRandomShark()
     {
-        //Get a random shark
+        
+        
+        Debug.Log("UsedSharks Capacity: " + usedSharks.Capacity);             
         Shark randomShark = sharks[Random.Range(0, sharks.Count)];
-
-        Debug.Log("Random Shark's name: " + randomShark.name);
-
-        //Loop until randomshark is not a duplicate.
-        while (usedSharks.Contains(randomShark))
-        {
-           randomShark = sharks[Random.Range(0, sharks.Count)];
-           Debug.Log("Random Shark's name: " + randomShark.name);
-        }
-
-        //Add random shark to the usedSharks List.
         usedSharks.Add(randomShark);
-
-        //Return the image of random shark
-        //return randomShark.sharkSprite;
 
     }
 
