@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Athletic
   m_EditorClassIdentifier: 
   name: Athletic
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 1d21742a82d94164386750b8cd099f85, type: 3}
