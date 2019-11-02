@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Optimist
   m_EditorClassIdentifier: 
   name: Optimist
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 4959bf0c43116484a9bdc1cb106c0a88, type: 3}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Laid-back
   m_EditorClassIdentifier: 
   name: Laid-back
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: f4f43b03bae764347a4331cf621097cb, type: 3}

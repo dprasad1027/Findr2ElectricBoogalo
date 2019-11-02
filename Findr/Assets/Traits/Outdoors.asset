@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Outdoors
   m_EditorClassIdentifier: 
   name: Outdoors
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 96d6200912897f54083d04f0927db728, type: 3}

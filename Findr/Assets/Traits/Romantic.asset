@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Romantic
   m_EditorClassIdentifier: 
   name: Romantic
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 81708d8df63892c4ebe4df6d00862bef, type: 3}

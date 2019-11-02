@@ -15,4 +15,9 @@ MonoBehaviour:
   name: Emishark
   bio: Fish are friends, not food.
   sharkSprite: {fileID: 21300000, guid: ab0bc4afd6203fd4db88d45b2bdd6a13, type: 3}
-  desiredTraits: []
+  desiredTraits:
+  - {fileID: 11400000, guid: 87a53b20ba47cfa4c9daad550c220c53, type: 2}
+  - {fileID: 11400000, guid: cf5290e6ee1aab047b2eaa4689bc8c60, type: 2}
+  - {fileID: 11400000, guid: 880923e2d92d740499014e5c5029ccf5, type: 2}
+  - {fileID: 11400000, guid: aa70aea29059425488e08a411c2d20e1, type: 2}
+  - {fileID: 11400000, guid: 1d4761dd6a0e8ed469d84791af9fdac0, type: 2}

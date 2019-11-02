@@ -15,4 +15,7 @@ MonoBehaviour:
   name: Alfred
   bio: My favorite activity is extending due dates.
   sharkSprite: {fileID: 21300000, guid: 649a478cdf7b3f84ab98847e01b4ce9a, type: 3}
-  desiredTraits: []
+  desiredTraits:
+  - {fileID: 11400000, guid: 2b3e91e6c69b03546951574bd9796133, type: 2}
+  - {fileID: 11400000, guid: 76487396e8a37174fa7d51de64863661, type: 2}
+  - {fileID: 11400000, guid: b44bcbe79383bc34d9268e0b055f3ef5, type: 2}

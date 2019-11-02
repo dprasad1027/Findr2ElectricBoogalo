@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Career-focused
   m_EditorClassIdentifier: 
   name: Career-focused
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 6f06d485aaae6f147a654e583ed76fd6, type: 3}

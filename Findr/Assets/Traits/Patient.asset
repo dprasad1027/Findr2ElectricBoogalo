@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Patient
   m_EditorClassIdentifier: 
   name: Patient
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: 9ad6adecbe0519e4a9c54fc6e709dcd3, type: 3}

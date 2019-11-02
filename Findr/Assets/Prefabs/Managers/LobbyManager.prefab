@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1769256727975784920}
   m_Layer: 0
   m_Name: LobbyManager
-  m_TagString: Untagged
+  m_TagString: LobbyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,3 +63,10 @@ MonoBehaviour:
   LobbyBG: {fileID: 0}
   LobbyText: {fileID: 0}
   MoneyText: {fileID: 0}
+  clientSelectionPanel: {fileID: 0}
+  upgradeBtn: {fileID: 0}
+  sharkInfo: {fileID: 0}
+  infoPanel: {fileID: 0}
+  infoImage: {fileID: 0}
+  infoName: {fileID: 0}
+  infoBio: {fileID: 0}

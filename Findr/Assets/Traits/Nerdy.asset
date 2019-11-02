@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Nerdy
   m_EditorClassIdentifier: 
   name: Nerdy
-  traitSprite: {fileID: 0}
+  traitSprite: {fileID: 21300000, guid: d7bcc0070db229948ab646accc1c2da2, type: 3}
