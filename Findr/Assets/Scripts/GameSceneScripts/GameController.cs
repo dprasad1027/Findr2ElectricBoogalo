@@ -210,6 +210,6 @@ public class GameController : MonoBehaviour
 
     public void ScoreToMoney()
     {
-        money = score / 100;
+        money = score;
     }
 }
