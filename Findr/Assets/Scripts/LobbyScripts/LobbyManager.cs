@@ -32,9 +32,6 @@ public class LobbyManager : MonoBehaviour
     public GameObject infoTraitPanel;
     public GameObject traitImage;
 
-    
-    
-
     private void Awake()
     {
         //Does what it says it does (hopefully)
@@ -296,63 +293,63 @@ public class LobbyManager : MonoBehaviour
         switch (currentLevel)
         {
             case 1:
-                requiredMoney = 0;
+                requiredMoney = 1;
                 break;
 
             case 2:
-                requiredMoney = 0;
+                requiredMoney = 2;
                 break;
 
             case 3:
-                requiredMoney = 0;
+                requiredMoney = 3;
                 break;
 
             case 4:
-                requiredMoney = 0;
+                requiredMoney = 4;
                 break;
 
             case 5:
-                requiredMoney = 0;
+                requiredMoney = 5;
                 break;
 
             case 6:
-                requiredMoney = 0;                
+                requiredMoney = 6;                
                 break;
 
             case 7:
-                requiredMoney = 0;
+                requiredMoney = 7;
                 break;
 
             case 8:
-                requiredMoney = 0;
+                requiredMoney = 8;
                 break;
 
             case 9:
-                requiredMoney = 0;
+                requiredMoney = 9;
                 break;
 
             case 10:
-                requiredMoney = 0;
+                requiredMoney = 10;
                 break;
 
             case 11:
-                requiredMoney = 0;
+                requiredMoney = 11;
                 break;
 
             case 12:
-                requiredMoney = 0;
+                requiredMoney = 12;
                 break;
 
             case 13:
-                requiredMoney = 0;
+                requiredMoney = 13;
                 break;
 
             case 14:
-                requiredMoney = 0;
+                requiredMoney = 14;
                 break;
 
             case 15:
-                requiredMoney = 0;
+                requiredMoney = 15;
                 break;
 
             default:
