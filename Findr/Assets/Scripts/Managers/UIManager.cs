@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowScreen(string name)
     {
-        AudioManager.main.PlaySingle(Confirm);
+        //AudioManager.main.PlaySingle(Confirm);
 
         PreviousScreenName = Screens[CurrentScreen].name;
         for (int i = 0; i < Screens.Count; i++)
@@ -97,6 +97,7 @@ public class UIManager : MonoBehaviour
 
     public void BackToLobby()
     {
+        PauseGame();
         SceneManager.LoadScene("Lobby");
     }
 
