@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     #region RuntimeMembers
 
     public int lobbyLevel = 1;
-    public int money;
+    public int money = 0;
     public bool IsPaused = false;
 
     public Shark selectedClient;

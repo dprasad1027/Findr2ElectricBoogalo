@@ -18,11 +18,14 @@ public class GameController : MonoBehaviour
     public Text timeText;
     public Text scoreText;
 
+    public int randomTraitCount = 2;
+
     private float timer;
     private float resetTimer = 60.0f;
 
     private int score;
     private int resetScore = 0;
+    private int money = 0;
 
     public GameObject traitImage;
     public GameObject clientTraitsPanel;
@@ -45,6 +48,11 @@ public class GameController : MonoBehaviour
         else
         {
             timer = 0;
+            ScoreToMoney();
+            GameManager.main.money += money;
+
+            // TEMPORARY
+            SceneManager.LoadScene("Lobby");
         }
 
         timeText.text = "Time: " + timer.ToString("N0");
@@ -93,7 +101,7 @@ public class GameController : MonoBehaviour
     {
         GameObject tempTraitImage;        
         s.desiredTraits.Clear();
-        int randomTraitCount = Random.Range(3, 6);
+        //int randomTraitCount = Random.Range(3, 6);
 
         //Give sharks random traits
         for(int i = 0; i < randomTraitCount; i++)
@@ -165,18 +173,19 @@ public class GameController : MonoBehaviour
         {
             if (client.desiredTraits.Contains(t))
             {
-                score += 50;
+                score += 100;
             }
             else
             {
-                score -= 50;
+                if (score - 50 >= 0)
+                {
+                    score -= 50;
+                }
             }
         }
 
-
         RemoveMatcheeTraits();
         UpdateMatchee();
-        
     }
 
     public void Dislike()
@@ -185,17 +194,22 @@ public class GameController : MonoBehaviour
 
         foreach (Trait t in matcheeTraitList)
         {
-            if (!client.desiredTraits.Contains(t))
+            /*if (!client.desiredTraits.Contains(t))
             {
-                score += 50;
+                score += 100;
             }
             else
             {
                 score -= 50;
-            }
+            }*/
         }
 
         RemoveMatcheeTraits();
         UpdateMatchee();
+    }
+
+    public void ScoreToMoney()
+    {
+        money = score / 100;
     }
 }
