@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -25,7 +26,8 @@ public class GameController : MonoBehaviour
 
     public GameObject traitImage;
     public GameObject clientTraitsPanel;
-    
+
+    public List<Trait> matcheeTraitList = new List<Trait>();
     // Update is called once per frame
     void Update()
     {
@@ -62,7 +64,13 @@ public class GameController : MonoBehaviour
         timer = resetTimer;
         score = resetScore;
 
-        
+        if(GameManager.main.selectedClient == null)
+        {
+            Debug.Log("Shark not found!. Returning to Title Screen!");
+            SceneManager.LoadScene(0);
+        }
+
+
         SelectedClientTraits();
         UpdateMatchee();
 
@@ -85,7 +93,7 @@ public class GameController : MonoBehaviour
     {
         GameObject tempTraitImage;        
         s.desiredTraits.Clear();
-        int randomTraitCount = Random.Range(1, 5);
+        int randomTraitCount = Random.Range(3, 6);
 
         //Give sharks random traits
         for(int i = 0; i < randomTraitCount; i++)
@@ -107,6 +115,7 @@ public class GameController : MonoBehaviour
             tempTraitImage.GetComponent<Image>().sprite = s.desiredTraits[i].traitSprite;
         }
 
+        matcheeTraitList = s.desiredTraits;
 
     }
 
@@ -150,11 +159,43 @@ public class GameController : MonoBehaviour
 
     public void Like()
     {
+        Shark client = GameManager.main.selectedClient;    
 
+        foreach (Trait t in matcheeTraitList)
+        {
+            if (client.desiredTraits.Contains(t))
+            {
+                score += 50;
+            }
+            else
+            {
+                score -= 50;
+            }
+        }
+
+
+        RemoveMatcheeTraits();
+        UpdateMatchee();
+        
     }
 
     public void Dislike()
     {
+        Shark client = GameManager.main.selectedClient;
 
+        foreach (Trait t in matcheeTraitList)
+        {
+            if (!client.desiredTraits.Contains(t))
+            {
+                score += 50;
+            }
+            else
+            {
+                score -= 50;
+            }
+        }
+
+        RemoveMatcheeTraits();
+        UpdateMatchee();
     }
 }
