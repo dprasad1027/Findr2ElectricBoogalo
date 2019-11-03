@@ -29,7 +29,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateTimer();        
+        UpdateTimer();
+        UpdateScoreText();
     }
 
     private void UpdateTimer()
@@ -61,9 +62,10 @@ public class GameController : MonoBehaviour
         timer = resetTimer;
         score = resetScore;
 
-        UpdateMatchee();
-        SelectedClientTraits();
         
+        SelectedClientTraits();
+        UpdateMatchee();
+
 
     }
 
@@ -139,8 +141,8 @@ public class GameController : MonoBehaviour
 
         MatcheeClientTraits(matcheeShark);
         matcheeImage.sprite = matcheeShark.sharkSprite;
-        matcheeName.text = matcheeName.text;
-        matcheeBio.text = matcheeBio.text;
+        matcheeName.text = matcheeShark.name;
+        matcheeBio.text = matcheeShark.bio;
 
     }
 

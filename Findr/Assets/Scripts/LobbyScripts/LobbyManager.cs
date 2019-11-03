@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LobbyManager : MonoBehaviour
 {
@@ -294,6 +295,8 @@ public class LobbyManager : MonoBehaviour
         if (infoPanel.activeSelf)
         {
             GameManager.main.selectedClient = sharkInfo;
+            SceneManager.LoadScene(2);
+            
         }
     }
 
