@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     public int randomTraitCount = 2;
 
     private float timer;
-    private float resetTimer = 60.0f;
+    private float resetTimer = 30.0f;
 
     private int score;
     private int resetScore = 0;
@@ -55,8 +55,8 @@ public class GameController : MonoBehaviour
             ScoreToMoney();
             GameManager.main.money += money;
 
-            resultScore.text = score.ToString();
-            moneyText.text = money.ToString();
+            resultScore.text = "Score: " + score.ToString();
+            moneyText.text = ": " + money.ToString();
 
             resultScreen.SetActive(true);
         }
