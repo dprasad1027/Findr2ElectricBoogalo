@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip LobbyMusic;
     public AudioClip GameMusic;
+    public AudioClip Confirm;
 
     private string SceneName = "";
 

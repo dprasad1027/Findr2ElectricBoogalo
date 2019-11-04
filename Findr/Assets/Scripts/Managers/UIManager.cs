@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowScreen(string name)
     {
-        //AudioManager.main.PlaySingle(Confirm);
+        AudioManager.main.PlaySingle(AudioManager.main.Confirm);
 
         PreviousScreenName = Screens[CurrentScreen].name;
         for (int i = 0; i < Screens.Count; i++)
@@ -74,6 +74,7 @@ public class UIManager : MonoBehaviour
 
     public void Quit()
     {
+        AudioManager.main.PlaySingle(AudioManager.main.Confirm);
         Application.Quit();
     }
 
@@ -95,14 +96,21 @@ public class UIManager : MonoBehaviour
         
     }
 
+    public void SettingsMenu()
+    {
+        ShowScreen("Settings");
+    }
+
     public void BackToLobby()
     {
         PauseGame();
+        AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
         SceneManager.LoadScene("Lobby");
     }
 
     public void Play()
     {
+        AudioManager.main.PlaySingle(AudioManager.main.Confirm);
         SceneManager.LoadScene("GameScene");
     }
 
