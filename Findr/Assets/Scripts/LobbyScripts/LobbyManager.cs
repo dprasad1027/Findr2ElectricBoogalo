@@ -426,6 +426,7 @@ public class LobbyManager : MonoBehaviour
         if (infoPanel.activeSelf)
         {
             GameManager.main.selectedClient = sharkInfo;
+            AudioManager.main.PlayMusic(AudioManager.main.GameMusic);
             SceneManager.LoadScene(2);
             
         }

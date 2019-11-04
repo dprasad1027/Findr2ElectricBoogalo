@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour
             GameManager.main.money += money;
 
             // TEMPORARY
+            AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
             SceneManager.LoadScene("Lobby");
         }
 
@@ -75,6 +76,7 @@ public class GameController : MonoBehaviour
         if(GameManager.main.selectedClient == null)
         {
             Debug.Log("Shark not found!. Returning to Title Screen!");
+            AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
             SceneManager.LoadScene(0);
         }
 
