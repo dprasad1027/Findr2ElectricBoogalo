@@ -31,6 +31,9 @@ public class LobbyManager : MonoBehaviour
     public Text infoBio;
     public GameObject infoTraitPanel;
     public GameObject traitImage;
+    public GameObject PopulateGridObject;
+
+    public static int sharksToPopulate = 3;
 
     private void Awake()
     {
@@ -306,6 +309,8 @@ public class LobbyManager : MonoBehaviour
 
             case 4:
                 requiredMoney = 4;
+                sharksToPopulate = 6;
+                PopulateGridObject.GetComponent<PopulateGrid>().Populate();
                 break;
 
             case 5:
@@ -326,6 +331,8 @@ public class LobbyManager : MonoBehaviour
 
             case 9:
                 requiredMoney = 9;
+                sharksToPopulate = 9;
+                PopulateGridObject.GetComponent<PopulateGrid>().Populate();
                 break;
 
             case 10:
@@ -346,6 +353,8 @@ public class LobbyManager : MonoBehaviour
 
             case 14:
                 requiredMoney = 14;
+                sharksToPopulate = 13;
+                PopulateGridObject.GetComponent<PopulateGrid>().Populate();
                 break;
 
             case 15:
@@ -367,6 +376,7 @@ public class LobbyManager : MonoBehaviour
             {
                 GameManager.main.lobbyLevel += 1;
                 AudioManager.main.PlaySingle(AudioManager.main.Confirm);
+
                 SetupLobby();
             }
             else
@@ -391,6 +401,9 @@ public class LobbyManager : MonoBehaviour
             upgradeBtn.GetComponent<Button>().interactable = false;
             clientSelectionPanel.SetActive(true);
         }
+
+        //PopulateGrid.main.Populate();
+
     }
 
     public void OpenClientInfo()

@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class PopulateGrid : MonoBehaviour
 {
     public GameObject clientBtn;
-    public int numberToCreate;
     public List<Shark> sharks = new List<Shark>();
     public List<Shark> usedSharks = new List<Shark>(1);
 
+    private int numberToCreate = 3;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +28,23 @@ public class PopulateGrid : MonoBehaviour
         
     }
 
-    private void Populate()
+    public void Populate()
     {
         GameObject newShark;
+        
+        if (LobbyManager.sharksToPopulate != numberToCreate)
+        {
+            numberToCreate = LobbyManager.sharksToPopulate;
 
-        for(int i = 0; i < numberToCreate; i++)
+            for (int i = 0; i < numberToCreate; i++)
+            {
+                GetRandomShark();
+            }
+            usedSharks.Remove(null);
+
+        }
+
+        for (int i = 0; i < numberToCreate; i++)
         {
             newShark = Instantiate(clientBtn, transform);
             newShark.GetComponent<Image>().sprite = usedSharks[i].sharkSprite;
