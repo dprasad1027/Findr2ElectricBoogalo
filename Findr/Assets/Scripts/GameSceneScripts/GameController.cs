@@ -21,14 +21,18 @@ public class GameController : MonoBehaviour
     public int randomTraitCount = 2;
 
     private float timer;
-    private float resetTimer = 60.0f;
+    private float resetTimer = 30.0f;
 
     private int score;
     private int resetScore = 0;
-    private int money = 0;
+    private int money = 0;   
 
     public GameObject traitImage;
     public GameObject clientTraitsPanel;
+    public Text resultScore;
+    public Text moneyText;
+    public GameObject resultScreen;
+
 
     public List<Trait> matcheeTraitList = new List<Trait>();
     // Update is called once per frame
@@ -48,16 +52,23 @@ public class GameController : MonoBehaviour
         else
         {
             timer = 0;
-            ScoreToMoney();
-            GameManager.main.money += money;
+            ScoreToMoney();           
 
-            // TEMPORARY
-            AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
-            SceneManager.LoadScene("Lobby");
+            resultScore.text = "Score: " + score.ToString();
+            moneyText.text = ": " + money.ToString();
+
+            resultScreen.SetActive(true);
         }
 
         timeText.text = "Time: " + timer.ToString("N0");
         
+    }
+
+    public void ReturnToLobby()
+    {
+        GameManager.main.money += money;
+        AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
+        SceneManager.LoadScene("Lobby");
     }
 
     private void UpdateScoreText()
@@ -72,6 +83,7 @@ public class GameController : MonoBehaviour
     {
         timer = resetTimer;
         score = resetScore;
+        resultScreen.SetActive(false);
 
         if(GameManager.main.selectedClient == null)
         {
@@ -79,7 +91,7 @@ public class GameController : MonoBehaviour
             AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
             SceneManager.LoadScene(0);
         }
-
+        
 
         SelectedClientTraits();
         UpdateMatchee();
