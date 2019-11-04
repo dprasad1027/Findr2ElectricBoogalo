@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Mixer.SetFloat("SfxVol", 20.0f);
     }
 
     // Update is called once per frame
