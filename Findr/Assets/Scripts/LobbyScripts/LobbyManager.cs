@@ -366,6 +366,7 @@ public class LobbyManager : MonoBehaviour
             if(currentLevel < 15)
             {
                 GameManager.main.lobbyLevel += 1;
+                AudioManager.main.PlaySingle(AudioManager.main.Confirm);
                 SetupLobby();
             }
             else
@@ -378,6 +379,8 @@ public class LobbyManager : MonoBehaviour
 
     public void OpenClientSelection()
     {
+        AudioManager.main.PlaySingle(AudioManager.main.Confirm);
+
         if (clientSelectionPanel.activeSelf)
         {
             upgradeBtn.GetComponent<Button>().interactable = true;
@@ -392,7 +395,8 @@ public class LobbyManager : MonoBehaviour
 
     public void OpenClientInfo()
     {
-        
+        AudioManager.main.PlaySingle(AudioManager.main.Confirm);
+
         if (infoPanel.activeSelf)
         {
 
@@ -426,6 +430,7 @@ public class LobbyManager : MonoBehaviour
         if (infoPanel.activeSelf)
         {
             GameManager.main.selectedClient = sharkInfo;
+            AudioManager.main.PlaySingle(AudioManager.main.Confirm);
             AudioManager.main.PlayMusic(AudioManager.main.GameMusic);
             SceneManager.LoadScene(2);
             
