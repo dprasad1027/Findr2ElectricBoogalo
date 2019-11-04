@@ -52,8 +52,7 @@ public class GameController : MonoBehaviour
         else
         {
             timer = 0;
-            ScoreToMoney();
-            GameManager.main.money += money;
+            ScoreToMoney();           
 
             resultScore.text = "Score: " + score.ToString();
             moneyText.text = ": " + money.ToString();
@@ -67,6 +66,7 @@ public class GameController : MonoBehaviour
 
     public void ReturnToLobby()
     {
+        GameManager.main.money += money;
         AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
         SceneManager.LoadScene("Lobby");
     }
