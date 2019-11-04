@@ -29,6 +29,7 @@ public class LobbyManager : MonoBehaviour
     public Image infoImage;
     public Text infoName;
     public Text infoBio;
+    public Text notEnoughMoney;
     public GameObject infoTraitPanel;
     public GameObject traitImage;
 
@@ -293,67 +294,67 @@ public class LobbyManager : MonoBehaviour
         switch (currentLevel)
         {
             case 1:
-                requiredMoney = 1;
+                requiredMoney = 100;
                 break;
 
             case 2:
-                requiredMoney = 2;
+                requiredMoney = 200;
                 break;
 
             case 3:
-                requiredMoney = 3;
+                requiredMoney = 300;
                 break;
 
             case 4:
-                requiredMoney = 4;
+                requiredMoney = 400;
                 break;
 
             case 5:
-                requiredMoney = 5;
+                requiredMoney = 500;
                 break;
 
             case 6:
-                requiredMoney = 6;                
+                requiredMoney = 600;                
                 break;
 
             case 7:
-                requiredMoney = 7;
+                requiredMoney = 700;
                 break;
 
             case 8:
-                requiredMoney = 8;
+                requiredMoney = 800;
                 break;
 
             case 9:
-                requiredMoney = 9;
+                requiredMoney = 900;
                 break;
 
             case 10:
-                requiredMoney = 10;
+                requiredMoney = 1000;
                 break;
 
             case 11:
-                requiredMoney = 11;
+                requiredMoney = 1100;
                 break;
 
             case 12:
-                requiredMoney = 12;
+                requiredMoney = 1200;
                 break;
 
             case 13:
-                requiredMoney = 13;
+                requiredMoney = 1300;
                 break;
 
             case 14:
-                requiredMoney = 14;
+                requiredMoney = 1400;
                 break;
 
             case 15:
-                requiredMoney = 15;
+                requiredMoney = 1500;
                 break;
 
             default:
-                requiredMoney = 1;
+                requiredMoney = 100;
                 break;
 
         }
@@ -375,6 +376,20 @@ public class LobbyManager : MonoBehaviour
                 Debug.Log("You are max level");
             }
         }
+        else
+        {
+            if (!notEnoughMoney.gameObject.activeSelf)
+            {
+                notEnoughMoney.gameObject.SetActive(true);
+                StartCoroutine(WaitForThree());
+            }
+        }
+    }
+
+    public IEnumerator WaitForThree()
+    {
+        yield return new WaitForSeconds(3.0f);
+        notEnoughMoney.gameObject.SetActive(false);
     }
 
     public void OpenClientSelection()
