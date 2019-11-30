@@ -67,5 +67,17 @@ public class AudioManager : MonoBehaviour
         MusicSource.Play();
     }
 
+    public void PauseMusic()
+    {
+        if (!MusicSource.isPlaying)
+        {
+            MusicSource.Pause();
+        }
+        else
+        {
+            MusicSource.Play();
+        }
+    }
+
     #endregion
 }

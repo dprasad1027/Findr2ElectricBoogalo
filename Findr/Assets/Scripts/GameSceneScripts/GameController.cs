@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
 
 public class GameController : MonoBehaviour
 {
@@ -66,6 +67,15 @@ public class GameController : MonoBehaviour
 
     public void ReturnToLobby()
     {
+        //UIManager.main.PauseGame();
+
+        if (Advertisement.IsReady())
+        {
+            Advertisement.Show();
+        }
+
+        //UIManager.main.PauseGame();
+
         GameManager.main.money += money;
         AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
         SceneManager.LoadScene("Lobby");

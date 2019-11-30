@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour
             GameManager.main.IsPaused = false;
             ShowScreen(PreviousScreenName);
         }
-        
+        AudioManager.main.PauseMusic();
     }
 
     public void SettingsMenu()
