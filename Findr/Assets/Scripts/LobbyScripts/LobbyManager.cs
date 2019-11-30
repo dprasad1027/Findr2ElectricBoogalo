@@ -45,8 +45,6 @@ public class LobbyManager : MonoBehaviour
         FurnishLobby();
     }
 
-
-
     //Sets Lobby Text based on values in GameManager
     private void SetLobbyText()
     {
