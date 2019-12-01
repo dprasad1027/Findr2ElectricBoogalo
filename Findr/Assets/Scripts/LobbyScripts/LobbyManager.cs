@@ -292,55 +292,55 @@ public class LobbyManager : MonoBehaviour
         switch (currentLevel)
         {
             case 1:
-                requiredMoney = 100;
+                requiredMoney = 50;
                 break;
 
             case 2:
-                requiredMoney = 200;
+                requiredMoney = 100;
                 break;
 
             case 3:
-                requiredMoney = 300;
+                requiredMoney = 150;
                 break;
 
             case 4:
-                requiredMoney = 400;
+                requiredMoney = 200;
                 break;
 
             case 5:
-                requiredMoney = 500;
+                requiredMoney = 300;
                 break;
 
             case 6:
-                requiredMoney = 600;                
+                requiredMoney = 400;                
                 break;
 
             case 7:
-                requiredMoney = 700;
+                requiredMoney = 500;
                 break;
 
             case 8:
-                requiredMoney = 800;
+                requiredMoney = 600;
                 break;
 
             case 9:
-                requiredMoney = 900;
+                requiredMoney = 700;
                 break;
 
             case 10:
-                requiredMoney = 1000;
+                requiredMoney = 800;
                 break;
 
             case 11:
-                requiredMoney = 1100;
+                requiredMoney = 950;
                 break;
 
             case 12:
-                requiredMoney = 1200;
+                requiredMoney = 1100;
                 break;
 
             case 13:
-                requiredMoney = 1300;
+                requiredMoney = 1250;
                 break;
 
             case 14:
@@ -348,7 +348,7 @@ public class LobbyManager : MonoBehaviour
                 break;
 
             case 15:
-                requiredMoney = 1500;
+                requiredMoney = 1550;
                 break;
 
             default:
@@ -379,14 +379,14 @@ public class LobbyManager : MonoBehaviour
             if (!notEnoughMoney.gameObject.activeSelf)
             {
                 notEnoughMoney.gameObject.SetActive(true);
-                StartCoroutine(WaitForThree());
+                StartCoroutine(NotEnoughMoneyTimer(0.5f));
             }
         }
     }
 
-    public IEnumerator WaitForThree()
+    public IEnumerator NotEnoughMoneyTimer(float time)
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(time);
         notEnoughMoney.gameObject.SetActive(false);
     }
 
