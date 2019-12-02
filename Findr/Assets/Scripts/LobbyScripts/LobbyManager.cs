@@ -432,6 +432,7 @@ public class LobbyManager : MonoBehaviour
         {
             if (!notEnoughMoney.gameObject.activeSelf)
             {
+                notEnoughMoney.text = "Not enough money! Need: " + requiredMoney;
                 notEnoughMoney.gameObject.SetActive(true);
                 StartCoroutine(NotEnoughMoneyTimer(0.5f));
             }
