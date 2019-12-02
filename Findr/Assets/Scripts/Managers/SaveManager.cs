@@ -1,91 +1,60 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager main;
 
-    public JsonData data;
-    public SaveState state;
-    public string path;
-
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        main = this;
-        JsonLoad();
-        //Save();
-
-        Debug.Log(Helper.Serialize<SaveState>(state));
-    }
-
-    public void Start()
-    {
-        data = new JsonData(0, 1, false);
-
-        path = Path.Combine(Application.persistentDataPath, "saved files", "save.json");
-    }
-
-    public void SerializeData()
-    {
-        string jsonDataString = JsonUtility.ToJson(state, true);
-
-        File.WriteAllText(path, jsonDataString);
-        Debug.Log(jsonDataString);
-    }
-
-    public void DeserializeData()
-    {
-        string loadedJsonDataString = File.ReadAllText(path);
-
-        data = JsonUtility.FromJson<JsonData>(loadedJsonDataString);
-
-        Debug.Log($"Money: {data.Money.ToString()} | Lobby Level: {data.LobbyLevel.ToString()} | Tutorial Passed: {data.TutorialPassed.ToString()}");
-    }
-
-    // Save whole state of SaveState script to PlayerPref
-    public void XmlSave()
-    {
-        PlayerPrefs.SetString("save", Helper.Serialize<SaveState>(state));
-    }
-
-    // Load previous SaveState from PlayerPref
-    public void JsonLoad()
-    {
-        if (PlayerPrefs.HasKey("save"))
+        if (main != null)
         {
-            state = Helper.Deserialize<SaveState>(PlayerPrefs.GetString("save"));
+            Destroy(gameObject);
+            return;
+        }
+        main = this;
+        DontDestroyOnLoad(this);
+
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt("Money", GameManager.main.money);
+        PlayerPrefs.SetInt("LobbyLevel", GameManager.main.lobbyLevel);
+        PlayerPrefs.SetString("TutorialPassed", GameManager.main.tutorialPassed.ToString());
+
+        PlayerPrefs.Save();
+    }
+
+    public void Load()
+    {
+        if (PlayerPrefs.HasKey("Money"))
+        {
+            GameManager.main.money = PlayerPrefs.GetInt("Money");
         }
         else
         {
-            state = new SaveState();
-            XmlSave();
-            Debug.Log("No save file found, creating a new one!");
+            GameManager.main.money = 0;
         }
-    }
 
-    [SerializeField]
-    public class JsonData
-    {
-        public int Money = 50;
-        public int LobbyLevel = 0;
-        public bool TutorialPassed = true;
-
-        public JsonData()
+        if (PlayerPrefs.HasKey("LobbyLevel"))
         {
-            this.Money = 0;
-            this.LobbyLevel = 0;
-            this.TutorialPassed = false;
+            GameManager.main.lobbyLevel = PlayerPrefs.GetInt("LobbyLevel");
+        }
+        else
+        {
+            GameManager.main.lobbyLevel = 1;
         }
 
-        public JsonData(int Money, int LobbyLevel, bool TutorialPassed)
+        if (PlayerPrefs.HasKey("TutorialPassed"))
         {
-            this.Money = Money;
-            this.LobbyLevel = LobbyLevel;
-            this.TutorialPassed = TutorialPassed;
+            GameManager.main.tutorialPassed = PlayerPrefs.GetString("TutorialPassed");
         }
+        else
+        {
+            GameManager.main.tutorialPassed = "false";
+        }
+
     }
-    
 }
