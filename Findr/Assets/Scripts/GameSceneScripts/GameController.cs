@@ -35,8 +35,8 @@ public class GameController : MonoBehaviour
     public GameObject resultScreen;
 
 
-    public List<Trait> matcheeTraitList = new List<Trait>();
-
+    public List<Trait> matcheeTraitList = new List<Trait>();
+
     private void Start()
     {
         timer = resetTimer;
@@ -48,9 +48,9 @@ public class GameController : MonoBehaviour
             Debug.Log("Shark not found!. Returning to Title Screen!");
             AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
             SceneManager.LoadScene(0);
-        }
-
-
+        }
+
+
         SelectedClientTraits();
         UpdateMatchee();
 
