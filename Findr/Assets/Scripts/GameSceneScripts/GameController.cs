@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
 
     private int score;
     private int resetScore = 0;
-    private int money = 0;   
+    private int money = 0;
 
     public GameObject traitImage;
     public GameObject clientTraitsPanel;
@@ -35,7 +35,28 @@ public class GameController : MonoBehaviour
     public GameObject resultScreen;
 
 
-    public List<Trait> matcheeTraitList = new List<Trait>();
+    public List<Trait> matcheeTraitList = new List<Trait>();
+
+    private void Start()
+    {
+        timer = resetTimer;
+        score = resetScore;
+        resultScreen.SetActive(false);
+
+        if (GameManager.main.selectedClient == null)
+        {
+            Debug.Log("Shark not found!. Returning to Title Screen!");
+            AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
+            SceneManager.LoadScene(0);
+        }
+
+
+        SelectedClientTraits();
+        UpdateMatchee();
+
+        Advertisement.Initialize("3380797");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -87,26 +108,6 @@ public class GameController : MonoBehaviour
         {
             scoreText.text = "Score: " + score;
         }
-    }
-
-    private void Start()
-    {
-        timer = resetTimer;
-        score = resetScore;
-        resultScreen.SetActive(false);
-
-        if(GameManager.main.selectedClient == null)
-        {
-            Debug.Log("Shark not found!. Returning to Title Screen!");
-            AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
-            SceneManager.LoadScene(0);
-        }
-        
-
-        SelectedClientTraits();
-        UpdateMatchee();
-
-
     }
 
     private void SelectedClientTraits()

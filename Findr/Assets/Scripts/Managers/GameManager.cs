@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int lobbyLevel = 1;
     public int money = 0;
     public bool IsPaused = false;
+    public string tutorialPassed = "false";
 
     public Shark selectedClient;
 
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SaveManager.main.Load();
     }
 
     // Update is called once per frame
