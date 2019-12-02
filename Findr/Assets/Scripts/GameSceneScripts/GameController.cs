@@ -34,9 +34,16 @@ public class GameController : MonoBehaviour
     public Text moneyText;
     public GameObject resultScreen;
 
+    public ParticleSystem dislikeParticle;
+    public ParticleSystem likeParticle;
 
-    public List<Trait> matcheeTraitList = new List<Trait>();
-
+    public GameObject likeBtn;
+    public GameObject dislikeBtn;
+
+    public List<Trait> matcheeTraitList = new List<Trait>();
+
+
+
     private void Start()
     {
         timer = resetTimer;
@@ -48,9 +55,12 @@ public class GameController : MonoBehaviour
             Debug.Log("Shark not found!. Returning to Title Screen!");
             AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
             SceneManager.LoadScene(0);
-        }
-
-
+        }
+
+
+
+
+
         SelectedClientTraits();
         UpdateMatchee();
 
@@ -199,6 +209,7 @@ public class GameController : MonoBehaviour
             if (client.desiredTraits.Contains(t))
             {
                 score += 100;
+            
             }
             else
             {
@@ -209,8 +220,11 @@ public class GameController : MonoBehaviour
             }
         }
 
+        
+        likeParticle.Play();
         RemoveMatcheeTraits();
         UpdateMatchee();
+       
     }
 
     public void Dislike()
@@ -227,10 +241,13 @@ public class GameController : MonoBehaviour
             {
                 score -= 50;
             }*/
+            
         }
-
-        RemoveMatcheeTraits();
+       
+        dislikeParticle.Play();
+        RemoveMatcheeTraits();        
         UpdateMatchee();
+      
     }
 
     public void ScoreToMoney()
