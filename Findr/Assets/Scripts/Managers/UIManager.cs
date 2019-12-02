@@ -75,6 +75,7 @@ public class UIManager : MonoBehaviour
     public void Quit()
     {
         AudioManager.main.PlaySingle(AudioManager.main.Confirm);
+        SaveManager.main.XmlSave();
         Application.Quit();
     }
 
