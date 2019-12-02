@@ -1899,7 +1899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clientBtn: {fileID: 8792302262574776415, guid: c2d0e8d20e1eb59458c52e1c15bef2e7,
     type: 3}
-  numberToCreate: 13
+  numberToCreate: 0
   sharks:
   - {fileID: 11400000, guid: 7fb954cea6f104f4189f9d9449db1e33, type: 2}
   - {fileID: 11400000, guid: e1a7b583b5d45aa439db4f1d89a72bd0, type: 2}
@@ -4847,5 +4847,10 @@ PrefabInstance:
       propertyPath: notEnoughMoney
       value: 
       objectReference: {fileID: 756648873}
+    - target: {fileID: 1769256727975784920, guid: 5f9d2ce1d3aa46449b20ebc32e30379f,
+        type: 3}
+      propertyPath: scrollbarContent
+      value: 
+      objectReference: {fileID: 625633742}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f9d2ce1d3aa46449b20ebc32e30379f, type: 3}

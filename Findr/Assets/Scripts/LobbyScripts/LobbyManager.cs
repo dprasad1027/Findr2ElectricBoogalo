@@ -32,6 +32,7 @@ public class LobbyManager : MonoBehaviour
     public Text notEnoughMoney;
     public GameObject infoTraitPanel;
     public GameObject traitImage;
+    public GameObject scrollbarContent;
 
     private void Awake()
     {
@@ -60,23 +61,37 @@ public class LobbyManager : MonoBehaviour
             case 1:
                 //Bad BG Pipe + Holes
                 LobbyBG.sprite = Backgrounds[0];
+
+                //Make 1 Shark in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 1;
+                
                 break;
 
             case 2:
                 //Bad BG Holes
                 LobbyBG.sprite = Backgrounds[1];
+
+                //Make 1 Shark in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 1;
                 break;
 
             case 3:
                 //Bad BG
                 LobbyBG.sprite = Backgrounds[2];
+
+                //Make 3 Sharks in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 3;
                 break;
 
             case 4:                
                 LobbyBG.sprite = Backgrounds[2];
-
+               
                 //Broken Stool
-                LobbyObjects[6].SetActive(true);                
+                LobbyObjects[6].SetActive(true);
+
+                //Make 3 Sharks in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 3;
+
                 break;
 
             case 5:
@@ -86,11 +101,13 @@ public class LobbyManager : MonoBehaviour
                 //Put up SignIn Clipboard
                 LobbyObjects[3].SetActive(true);
                 SignInBtn.GetComponent<Image>().sprite = clientClipboard;
-
                 LobbyObjects[6].SetActive(true);
 
                 //Normal BG
                 LobbyBG.sprite = Backgrounds[3];
+
+                //Make 6 Sharks in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 3;
                 break;
 
             case 6:                
@@ -101,7 +118,7 @@ public class LobbyManager : MonoBehaviour
                 //FixUp Stool                
                 LobbyObjects[6].SetActive(true);
                 LobbyObjects[6].GetComponent<Image>().sprite = fixedStool;
-
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 6;
                 break;
 
             case 7:
@@ -114,6 +131,8 @@ public class LobbyManager : MonoBehaviour
                 //Add Desk
                 LobbyObjects[2].SetActive(true);
 
+                //Make 6 Sharks in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 6;
                 break;
             case 8:
                 LobbyObjects[7].SetActive(false);
@@ -126,6 +145,9 @@ public class LobbyManager : MonoBehaviour
                 //Add Athena + Nametag
                 LobbyObjects[1].SetActive(true);
                 LobbyObjects[4].SetActive(true);
+
+                //Make 6 Sharks in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 6;
 
                 break;
             case 9:
@@ -140,6 +162,9 @@ public class LobbyManager : MonoBehaviour
 
                 //Add Penholder
                 LobbyObjects[5].SetActive(true);
+
+                //Make 9 Sharks in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 9;
 
                 break;
 
@@ -156,6 +181,9 @@ public class LobbyManager : MonoBehaviour
 
                 //Add Window
                 LobbyObjects[0].SetActive(true);
+
+                //Make 9 Sharks in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 9;
 
                 break;
 
@@ -176,6 +204,10 @@ public class LobbyManager : MonoBehaviour
                 LobbyObjects[4].SetActive(true);
                 LobbyObjects[5].SetActive(true);                
                 LobbyObjects[0].SetActive(true);
+
+                //Make 9 Sharks in the grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 9;
+
                 break;
 
             case 12:
@@ -194,6 +226,9 @@ public class LobbyManager : MonoBehaviour
                 LobbyObjects[4].SetActive(true);
                 LobbyObjects[5].SetActive(true);
                 LobbyObjects[0].SetActive(true);
+
+                //Make 12 Sharks in grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 12;
                 break;
 
             case 13:
@@ -211,6 +246,10 @@ public class LobbyManager : MonoBehaviour
 
                 //Add Luxury Rug
                 LobbyObjects[10].SetActive(true);
+
+                //Make 12 Sharks in grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 12;
+
                 break;
 
             case 14:
@@ -241,8 +280,11 @@ public class LobbyManager : MonoBehaviour
                 LobbyObjects[0].SetActive(false);
 
                 //Add Luxury Window
-                LobbyObjects[8].SetActive(true);                
-                
+                LobbyObjects[8].SetActive(true);
+
+                //Make 12 Sharks in grid
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 12;
+
                 break;
 
             case 15:
@@ -269,6 +311,9 @@ public class LobbyManager : MonoBehaviour
                 //Add Luxury Sofa and Chandelier
                 LobbyObjects[11].SetActive(true);
                 LobbyObjects[9].SetActive(true);
+
+                //Make 13 Sharks in the grid 
+                scrollbarContent.GetComponent<PopulateGrid>().numberToCreate = 13;
                 break;
 
             default:
