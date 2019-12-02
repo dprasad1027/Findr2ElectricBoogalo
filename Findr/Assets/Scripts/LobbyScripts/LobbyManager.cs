@@ -36,8 +36,17 @@ public class LobbyManager : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    private void Start()
+    {
         //Does what it says it does (hopefully)
         SetupLobby();
+        if (GameManager.main.tutorialPassed.Equals("false"))
+        {
+            UIManager.main.ShowScreen("TutorialScreen_1");
+        }
     }
 
     private void SetupLobby()

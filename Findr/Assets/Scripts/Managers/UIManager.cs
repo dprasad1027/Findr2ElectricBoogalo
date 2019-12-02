@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     public AudioClip Confirm;
     public int CurrentScreen;
     public string PreviousScreenName = "None";
+
     //public GameObject CurrentLevel;
 
     #endregion
@@ -75,6 +76,7 @@ public class UIManager : MonoBehaviour
     public void Quit()
     {
         AudioManager.main.PlaySingle(AudioManager.main.Confirm);
+        SaveManager.main.Save();
         Application.Quit();
     }
 
@@ -101,10 +103,17 @@ public class UIManager : MonoBehaviour
         ShowScreen("Settings");
     }
 
+    public void TutorialDone()
+    {
+        UIManager.main.ShowScreen("None");
+        GameManager.main.tutorialPassed = "true";
+    }
+
     public void BackToLobby()
     {
         PauseGame();
         AudioManager.main.PlayMusic(AudioManager.main.LobbyMusic);
+        SaveManager.main.Save();
         SceneManager.LoadScene("Lobby");
     }
 

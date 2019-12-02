@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6763918869461471127}
   - component: {fileID: 6763918869461471126}
+  - component: {fileID: 6763918868492869014}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -41,5 +42,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbaed16f0c7495e43af0e09fd877b477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lobbyLevel: 1
+  money: 0
+  IsPaused: 0
+  tutorialPassed: false
+  selectedClient: {fileID: 0}
+--- !u!114 &6763918868492869014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6763918869461471125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ba6ea670d61f241a718aed6dec1dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
